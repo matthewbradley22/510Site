@@ -1,0 +1,88 @@
+html {
+  scroll-behavior: smooth;
+ }
+ 
+body{
+    margin: 0;
+    background-color: rgb(244, 206, 155);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 4vw;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    background-color: rgb(249, 231, 197);
+    height: 80px;
+    margin: 0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 2vw;
+}
+
+button{
+    font-size: 1vw; 
+    background-color: #c7dfeb;
+    border: 2px solid #000;
+    border-radius: 16px;
+    margin: 2vw;
+}
+
+button:hover{
+     border: 2px solid #0d471c;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.responsive {
+  width: 50%;
+  height: auto;
+}
+
+h2{
+    font-size: 2.5vw; 
+    margin: 2vw;
+}
+
+a{
+    font-size: 2vw;
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    color: #0d471c;
+}
+
+.floatingImg{
+    position: absolute;
+    width: 20%;
+    height: auto;
+}
+
+#watermelon1{
+    left: 5em;
+    animation: wiggle 4s infinite;
+}
+
+@keyframes wiggle {
+    0% { top:5em; }
+   50% {top:7em;}
+   100% { top: 5em; }
+}
