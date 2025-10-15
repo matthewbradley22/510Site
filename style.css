@@ -14,7 +14,8 @@ main {
 }
 
 h1{
-    font-size: 4vw;
+    font-size: 3rem;
+    text-align: center;
 }
 header {
     display: flex;
@@ -51,8 +52,15 @@ button:hover{
 }
 
 .responsive {
-  width: 50%;
+  width: 60%;
   height: auto;
+}
+@media (max-width: 500px) {
+  .responsive {
+  width: 90%;
+  height: auto;
+}
+
 }
 
 h2{
@@ -77,12 +85,46 @@ a:hover{
 }
 
 #watermelon1{
-    left: 5em;
+    left: 2vw;
     animation: wiggle 4s infinite;
 }
 
+@media (max-width: 500px) {
+    #watermelon1{
+    left: 2vw;
+    animation: wiggleLong 4s infinite;
+}
+
+    @keyframes wiggleLong {
+    0% { top:10em; }
+   50% {top:12em;}
+   100% { top: 10em; }
+}
+}
+
 @keyframes wiggle {
-    0% { top:5em; }
-   50% {top:7em;}
-   100% { top: 5em; }
+    0% { top:6em; }
+   50% {top:8em;}
+   100% { top: 6em; }
+}
+
+.infoSectionInfo{
+    font-size: 1.5vw; 
+    display: flex;
+    justify-content: space-around;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.furtherInfoPic{
+     width: 20%;
+     height: auto;
+}
+
+.infeSectionText{
+    margin-right: 4vw;
+     border-radius: 25px;
+     padding: 2vw;
+    background-color: rgb(240, 180, 103);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
