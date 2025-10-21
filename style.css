@@ -28,8 +28,8 @@ header {
     margin: 0;
 }
 
-#logo{
-    height: 140%;
+.logo{
+    height: 110%;
 }
 
 .headerText{
@@ -136,4 +136,30 @@ a:hover{
 
 .infoSectionText:hover{
     background-color: rgb(235, 159, 59);
+}
+
+.interview{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2vw;
+    width: 60%;
+    text-align: start;
+}
+
+.question{
+    font-weight: 600;
+}
+
+.question, .answer{
+    font-size: clamp(15px, 1.5vw, 48px); 
+    text-align: start;
+    width: 100%;
+}
+
+#selfInfo{
+    width: 90%;
+    font-size: clamp(18px, 1.5vw, 48px); 
+    text-align: start;
+    padding: 1vw;
 }
