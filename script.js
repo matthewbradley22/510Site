@@ -2,6 +2,12 @@
 //Document properties
 let curQuestion = document.getElementById("quizQuestion");
 let quizButton = document.getElementById("beginQuizButton");
+
+//Calculating days left
+let today = new Date();
+const fiveTenDay = new Date("December 28, 2025 00:00:00 UTC-00:00");
+today.setDate(today.getDate())
+console.log(Math.ceil(Math.abs(fiveTenDay - today)/(1000*60*60*24)));
 //This should go up 1 every time someone answers a question
 let currentQuizQuestion = 0;
 
