@@ -163,3 +163,7 @@ a:hover{
     text-align: start;
     padding: 1vw;
 }
+
+#beginQuizButton{
+    font-size: 4vw; 
+}
