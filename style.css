@@ -167,3 +167,58 @@ a:hover{
 #beginQuizButton{
     font-size: 4vw; 
 }
+
+#playerCards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.playerCard_ind{
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+     font-size: clamp(18px, 3vw, 48px); 
+}
+
+.playerCard_ind img {
+    width: 10%;
+    height: auto;
+}
+
+#LaurenPic{
+     width: 40%;
+    height: auto;
+}
+
+#AndrewPic{
+     width: 40%;
+    height: auto;
+}
+
+#EmilyPic{
+     width: 50%;
+    height: 50%;
+}
+
+#MyraPic{
+     width: 50%;
+    height: 50%;
+}
+
+#JordanPic{
+     width: 50%;
+    height: 50%;
+}
+
+#MatthewPic{
+     width: 40%;
+    height: auto;
+}
+
+#quizAnswerContainer * {
+
+    font-size: clamp(20px, 3vw, 48px); 
+
+}
