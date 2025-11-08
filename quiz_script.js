@@ -1,6 +1,7 @@
 let curQuestion = document.getElementById("quizQuestion");
 let quizButton = document.getElementById("beginQuizButton");
 let curAnswers = document.getElementById("quizAnswerContainer");
+let quiz_result = document.getElementById("quiz_final_result");
 let currentQuizQuestion_number = 0;
 let answer_set = [];
 
@@ -30,10 +31,38 @@ quiz_map.set("Where can you be found on 510 day?", ["Smoking in the hot tub",
     "Headstanding"
 ],);
 
+//////////////////////////////
+//Player answers
+
+//Matthew
 player_answers_map.set("Matthew", ["75%", "Patroclus", "Ryan Gosling", "Whatever Emily hands me",
     "On the dot", "The next hyperfixation", "Headstanding"]);
-    player_answers_map.set("Matthew", ["75%", "Patroclus", "Ryan Gosling", "Whatever Emily hands me",
-    "On the dot", "The next hyperfixation", "Headstanding"])
+
+//Emily
+player_answers_map.set("Emily", ["25%", "Patroclus", "Aragorn", "Diego", "Hot everclear wine",
+    "Fashionably late", "The next hyperfixation", "Smoothies", "Glizzies", "Headstanding", "Choreographing the masses"]);
+
+//Lauren
+player_answers_map.set("Lauren", ["50%", "Helen", "Legolas", "Hot everclear wine", 
+    "Should someone do a wellness check?", "Is that critter okay?", "Cheez its", 
+    "Glizzies", "Headstanding", "Choreographing the masses"]);
+
+//Andrew
+player_answers_map.set("Andrew", ["50%", "Patroclus", "A woman?", "Double IPA", 
+    "Should someone do a wellness check?", "Protect the wall", "Smoked meat ;)",
+     "Headstanding", "Irish jigging"]);
+
+//Jordan
+player_answers_map.set("Jordan", ["100%", "Patroclus", "Timmy T", "Adderall borg", 
+    "On the dot", "Keeping the kids out of the mines", "Cholula",
+     "Smoking in the hot tub"]);
+
+//Myra
+player_answers_map.set("Myra", ["100%", "Achilles", "Aragorn", "Hot everclear wine",
+     "Adderall borg", "Whatever Emily hands me",
+    "If you're not early you're late", "Fuck bitches, get money", "Pho", "Glizzies",
+     "Smoking in the hot tub"]);
+
 
 // button to start quiz
 quizButton.onclick = function(){
@@ -47,7 +76,6 @@ changeQuizQuestion = function(){
     curQuestion.innerHTML = Array.from(quiz_map.keys())[currentQuizQuestion_number]; 
     cur_answers =  Array.from(quiz_map.values())[currentQuizQuestion_number]; 
     num_answers = Array.from(quiz_map.values())[currentQuizQuestion_number].length; 
-    console.log(num_answers);
     }
     //for loop to get num questions and put in buttons
 
@@ -74,11 +102,20 @@ changeQuizQuestion = function(){
 }
 
 score_quiz = function(){
+    let final_match = "";
+    let len_final_match = 0;
+    curQuestion.innerHTML = "";
+     curAnswers.innerHTML = "";
 
-     // Put all elements of a[] in as
-    const real_answer_set = new Set(player_answers_map.get("Matthew"));
-    const track_answers = new Set();
-    const final_result = [];
+    for (let i = 0; i <= num_answers; i++){
+         let current_real_person = Array.from(player_answers_map.keys())[i];  
+
+         // Quick algorithm for finding intersection of two arrays
+
+         //Create 2 sets and final answer array to loop through
+         const real_answer_set = new Set(player_answers_map.get(current_real_person)); 
+          const track_answers = new Set();
+          const final_result = [];
 
     // Traverse through b[]
     for (let i = 0; i < answer_set.length; i++) {
@@ -90,8 +127,20 @@ score_quiz = function(){
             final_result.push(answer_set[i]);
         }
     }
+    if(final_result.length > len_final_match){
+        final_match = current_real_person;
+        len_final_match = final_result.length
+    };
+    console.log(current_real_person);
+    console.log("Final result for:");
     console.log(final_result);
-    console.log(final_result.length)
+    console.log("Real answer set:")
+    console.log(real_answer_set);
+    console.log("You are");
+    }
+    console.log(final_match)
+    quiz_result.innerHTML = "You are " + final_match + "!!!" + " You answered " + len_final_match + " as "+ final_match;
+
 }
 
 

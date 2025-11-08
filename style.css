@@ -222,3 +222,7 @@ a:hover{
     font-size: clamp(20px, 3vw, 48px); 
 
 }
+
+.quiz_final_result{
+    font-size: 5vw;
+}

@@ -1,16 +1,18 @@
 ////////////
 //Document properties
-let dayCount = document.getElementById("days")
+let dayCount = document.getElementById("days");
 
 //Calculating days left
 let today = new Date();
 const fiveTenDay = new Date("December 28, 2025 00:00:00 UTC-00:00");
-today.setDate(today.getDate())
+today.setDate(today.getDate());
 let days_left = Math.ceil(Math.abs(fiveTenDay - today)/(1000*60*60*24));
 
+
 //Update day count
-function update_days() {
+document.addEventListener('DOMContentLoaded', function() {
     dayCount.innerHTML = days_left;
     console.log(days_left);
-}
+}, false);
+
 
