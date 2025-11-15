@@ -16,3 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 
 
+function makeResponsive() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive_header";
+  } else {
+    x.className = "topnav";
+  }
+}

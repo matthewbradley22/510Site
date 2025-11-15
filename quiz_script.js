@@ -10,6 +10,7 @@ const quiz_map = new Map();
 
 //Set of hard coded real answers
 const player_answers_map = new Map();
+const response_to_final_answer = new Map();
 
 //How many answers a given question has, what current answers are 
 let num_answers = 0;
@@ -17,7 +18,7 @@ let cur_answers = 0;
 
 quiz_map.set("How stinky are you?", ["25%", "50%", "75%", "100%"],);
 quiz_map.set("Which Wicked Beauty character are you?", ["Helen", "Patroclus", "Achilles"],);
-quiz_map.set("Whoa are you marrying?", ["Legolas", "Aragorn", "Diego", "Timmy T", "Ryan Gosling", "A woman?"],);
+quiz_map.set("Who are you marrying?", ["Legolas", "Aragorn", "Diego", "Timmy T", "Ryan Gosling", "A woman?"],);
 quiz_map.set("It's 2AM, what are you drinking?", ["Double IPA", "Hot everclear wine", "Adderall borg", "Whatever Emily hands me"],);
 quiz_map.set("How late are you showing up to the function?", ["If you're not early you're late",
     "On the dot", "Fashionably late", "Should someone do a wellness check?"],);
@@ -63,6 +64,29 @@ player_answers_map.set("Myra", ["100%", "Achilles", "Aragorn", "Hot everclear wi
     "If you're not early you're late", "Fuck bitches, get money", "Pho", "Glizzies",
      "Smoking in the hot tub"]);
 
+/////////////////////////////////////////////////////////////////
+//Responses to final answers
+
+//Myra
+response_to_final_answer.set("Myra", "You got the <b>Glizzy Goblin</b>. You probably pee on the side of the road \
+    while Ed Sheeran is still playing from your car. You're always down to throw down \
+    but can also be found knitting with 3 cats on your lap, joint in hand. You pair well with\
+    Roach Killer until around 2 AM and Smoothie Smasher any time after.")
+//Emily
+response_to_final_answer.set("Emily", "You got the <b>Smoothie Smasher<b>. You out fresh the rest of the group \
+    by a mile. You're likely found fueling your current hyperfixation with a balanced mixture\
+    of salt licorice ice cream and snus. You flawlessly combine high and low brow, easily transitioning\
+    from critical theory to critical smut. For these reasons, you are a clear pairing with the Glizzy Goblin\
+    and Chapparal Cock.")
+ //Lauren
+response_to_final_answer.set("Lauren", "You got the <b>Spicy Shooter<b>. You're found deep in the night \
+    perfecting various crafts such as rockband drumming, harmonica playing, and horror movie critiquing. You likely know the sounds\
+    of Twilight and Lord of the Rings better than anyone else on planet Earth. We are hopeful you like us as much \
+    as your critter companions. Your behind the scenes schemes make your a perfect pair with Roach Killer and Vitamin R.")
+ //Andrew
+response_to_final_answer.set("Andrew", "You got <b>Vitamin R<b>. You're the only member of the group who has mastered \
+    both the grill and the jig. You are heavily relied upon for maintaining critical function of group tools such as \
+    making Overcooked 2 work. Not to mention being the full time commune DJ. Your ")
 
 // button to start quiz
 quizButton.onclick = function(){
@@ -139,7 +163,16 @@ score_quiz = function(){
     console.log("You are");
     }
     console.log(final_match)
-    quiz_result.innerHTML = "You are " + final_match + "!!!" + " You answered " + len_final_match + " as "+ final_match;
+    if(answer_set[7] == 'Non consensually drinking white claw'){
+        quiz_result.innerHTML = "You are 100% Diego! <br/> <br/> Aren't you a referee? How did you find your way here?? Make sure to avoid eating any of our food!"
+    }
+    else{
+         quiz_result.innerHTML = response_to_final_answer.get(final_match);
+         
+         //"You are " + final_match + "!!!" + " You are a " + (100*len_final_match)/8 + 
+         //"% match with "+ final_match;
+    }
+    
 
 }
 

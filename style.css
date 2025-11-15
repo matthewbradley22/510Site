@@ -33,7 +33,7 @@ header {
 }
 
 .headerText{
-    font-size: clamp(10px, 2.5vw, 48px); 
+    font-size: clamp(13px, 2.5vw, 48px); 
     font-weight: 700;
 }
 
@@ -43,10 +43,6 @@ button{
     border: 2px solid #000;
     border-radius: 16px;
     margin: 2vw;
-}
-
-button:hover{
-     border: 2px solid #0d471c;
 }
 
 #info{
@@ -70,6 +66,14 @@ button:hover{
 h2{
    font-size: clamp(15px, 3vw, 48px); 
     margin: 2vw;
+}
+
+#quizTitle{
+     font-size: clamp(25px, 3vw, 48px); 
+     background-color: #e0875a;
+     width: 100%;
+     margin-top: 0px;
+     text-align: center;
 }
 
 a{
@@ -126,6 +130,10 @@ a:hover{
      height: min-content;
 }
 
+#furtherInfoButton{
+    font-size: clamp(15px, 1.5vw, 48px); 
+}
+
 .infoSectionText{
     margin-right: 4vw;
     border-radius: 25px;
@@ -165,7 +173,8 @@ a:hover{
 }
 
 #beginQuizButton{
-    font-size: 4vw; 
+    font-size: clamp(15px, 2vw, 48px); 
+    padding: 15px;
 }
 
 #playerCards{
@@ -223,6 +232,95 @@ a:hover{
 
 }
 
-.quiz_final_result{
+#quiz_final_result{
     font-size: 5vw;
+    text-align: center;
+    margin-top: 6w;
+}
+
+#quizQuestion{
+    font-size: 5vw;
+    text-align: center;
+}
+
+button {
+  appearance: button;
+  background-color: #d67118;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 2vw;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.button:after {
+  background-clip: padding-box;
+  background-color: #f6891c;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button,
+.button:focus {
+  user-select: auto;
+}
+
+.button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button:disabled {
+  cursor: auto;
+}
+
+.button:active {
+  border-width: 4px 0 0;
+  background: none;
+}
+
+.icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .headerText{
+        margin: 6px;
+    }
+.headerText.notAbout{
+        border-right: solid 2px #8b360b;
+    }
+    
+    .infoSectionText:hover {
+    background-color: rgb(240, 180, 103);
+}
+
 }
