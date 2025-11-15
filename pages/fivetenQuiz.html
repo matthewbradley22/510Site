@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fiveten quiz</title>
      <link rel="stylesheet"  href="../style.css">
-     <script src="../script.js" defer></script>
+     <script src="../quiz_script.js" defer></script>
 </head>
 <body>
      <header>
          <a href="../index.html" class="logo">
             <img src="../images/510Logo.png" alt="510" class="logo"/>
         </a>
-        <a href="" class="headerText">Meet the members</a>
-        <a href="./exclusiveInterview.html" class="headerText">Exclusive interview</a>
+        <a href="" class="headerText notAbout">Meet the members</a>
+        <a href="./exclusiveInterview.html" class="headerText notAbout">Exclusive interview</a>
+        <a href="../pages/fivetenQuiz.html" class="headerText notAbout">510 Quiz!</a>
         <a href="./aboutMe.html" class="headerText">About the developer</a>
         </header>
         <main>
+            <h2 id="quizTitle">Which 510 Member are you?</h2>
             <button id="beginQuizButton">
                 Press to begin quiz!
             </button>
@@ -26,6 +28,7 @@
                 <div id="quizAnswerContainer">
                 </div>
             </div>
+            <div id="quiz_final_result"></div>
         </main>
 </body>
 </html>
